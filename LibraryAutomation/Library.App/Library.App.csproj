@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76781248-5CAB-4B8D-AC3C-60A0212377A7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Library.App</RootNamespace>
+    <AssemblyName>Library.App</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminPanel\BookCategoryOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\BookCategoryOperations.designer.cs">
+      <DependentUpon>BookCategoryOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\BookOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\BookOperations.designer.cs">
+      <DependentUpon>BookOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\CategoryOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\CategoryOperations.designer.cs">
+      <DependentUpon>CategoryOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\CommentOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\CommentOperations.designer.cs">
+      <DependentUpon>CommentOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\ContactOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\ContactOperations.designer.cs">
+      <DependentUpon>ContactOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\ControlCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\ControlCenter.designer.cs">
+      <DependentUpon>ControlCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\PublisherOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\PublisherOperations.designer.cs">
+      <DependentUpon>PublisherOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\UserBookOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\UserBookOperations.designer.cs">
+      <DependentUpon>UserBookOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\UserOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\UserOperations.designer.cs">
+      <DependentUpon>UserOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\UserRoleOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\UserRoleOperations.designer.cs">
+      <DependentUpon>UserRoleOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\WriterOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\WriterOperations.designer.cs">
+      <DependentUpon>WriterOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="General\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="General\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Alert.cs" />
+    <Compile Include="Popup\AlertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\AlertForm.designer.cs">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserPanel\Contact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\Contact.designer.cs">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\UpdateComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\UpdateComment.designer.cs">
+      <DependentUpon>UpdateComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\BorrowedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\BorrowedList.designer.cs">
+      <DependentUpon>BorrowedList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\SeeCommentPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\SeeCommentPersonal.designer.cs">
+      <DependentUpon>SeeCommentPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\Profile.designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\WillReads.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\WillReads.designer.cs">
+      <DependentUpon>WillReads.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\HaveReads.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\HaveReads.designer.cs">
+      <DependentUpon>HaveReads.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\Favorites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\Favorites.designer.cs">
+      <DependentUpon>Favorites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\SeeComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\SeeComment.designer.cs">
+      <DependentUpon>SeeComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\AddComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\AddComment.designer.cs">
+      <DependentUpon>AddComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\Archive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\Archive.designer.cs">
+      <DependentUpon>Archive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\Writers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\Writers.designer.cs">
+      <DependentUpon>Writers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\FormControls\FormControls.cs" />
+    <Compile Include="Utilities\ImageControls\Helpers.cs" />
+    <EmbeddedResource Include="AdminPanel\BookCategoryOperations.resx">
+      <DependentUpon>BookCategoryOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\BookOperations.resx">
+      <DependentUpon>BookOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\CategoryOperations.resx">
+      <DependentUpon>CategoryOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\CommentOperations.resx">
+      <DependentUpon>CommentOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\ContactOperations.resx">
+      <DependentUpon>ContactOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\ControlCenter.resx">
+      <DependentUpon>ControlCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\PublisherOperations.resx">
+      <DependentUpon>PublisherOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\UserBookOperations.resx">
+      <DependentUpon>UserBookOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\UserOperations.resx">
+      <DependentUpon>UserOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\UserRoleOperations.resx">
+      <DependentUpon>UserRoleOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\WriterOperations.resx">
+      <DependentUpon>WriterOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\AlertForm.resx">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserPanel\Contact.resx">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\UpdateComment.resx">
+      <DependentUpon>UpdateComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\BorrowedList.resx">
+      <DependentUpon>BorrowedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\SeeCommentPersonal.resx">
+      <DependentUpon>SeeCommentPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\WillReads.resx">
+      <DependentUpon>WillReads.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\HaveReads.resx">
+      <DependentUpon>HaveReads.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\Favorites.resx">
+      <DependentUpon>Favorites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\SeeComment.resx">
+      <DependentUpon>SeeComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\AddComment.resx">
+      <DependentUpon>AddComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\Archive.resx">
+      <DependentUpon>Archive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\Writers.resx">
+      <DependentUpon>Writers.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library.Core\Library.Core.csproj">
+      <Project>{0117052d-cc0e-469d-b0b6-dac9301c6db3}</Project>
+      <Name>Library.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Data\Library.Data.csproj">
+      <Project>{69bfae14-9c05-4f87-a241-22eb908adda3}</Project>
+      <Name>Library.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Entities\Library.Entities.csproj">
+      <Project>{910a8d1e-3235-4852-a5cf-cd341c6fca6a}</Project>
+      <Name>Library.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Services\Library.Services.csproj">
+      <Project>{2deea722-9bf9-4d0a-8cd5-69c1eb5d49de}</Project>
+      <Name>Library.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultBook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultRoot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultWriter.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

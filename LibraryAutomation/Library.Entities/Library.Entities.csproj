@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{910A8D1E-3235-4852-A5CF-CD341C6FCA6A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Library.Entities</RootNamespace>
+    <AssemblyName>Library.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Concrete\Book.cs" />
+    <Compile Include="Entities\Concrete\BookCategory.cs" />
+    <Compile Include="Entities\Concrete\Category.cs" />
+    <Compile Include="Entities\Concrete\Comment.cs" />
+    <Compile Include="Entities\Concrete\Contact.cs" />
+    <Compile Include="Entities\Concrete\FavoriteBook.cs" />
+    <Compile Include="Entities\Concrete\Publisher.cs" />
+    <Compile Include="Entities\Concrete\User.cs" />
+    <Compile Include="Entities\Concrete\UserBook.cs" />
+    <Compile Include="Entities\Concrete\Writer.cs" />
+    <Compile Include="Entities\Dtos\BookCategoryDto\BookCategoryAddDto.cs" />
+    <Compile Include="Entities\Dtos\CommentDto\CommentAddDto.cs" />
+    <Compile Include="Entities\Dtos\CommentDto\CommentGetDto.cs" />
+    <Compile Include="Entities\Dtos\CommentDto\CommentUpdateDto.cs" />
+    <Compile Include="Entities\Dtos\CommentDto\CommentListDto.cs" />
+    <Compile Include="Entities\Dtos\BookDto\BookAddDto.cs" />
+    <Compile Include="Entities\Dtos\BookDto\BookGetDto.cs" />
+    <Compile Include="Entities\Dtos\BookDto\BookListDto.cs" />
+    <Compile Include="Entities\Dtos\BookDto\BookUpdateDto.cs" />
+    <Compile Include="Entities\Dtos\CategoryDto\CategoryAddDto.cs" />
+    <Compile Include="Entities\Dtos\CategoryDto\CategoryGetDto.cs" />
+    <Compile Include="Entities\Dtos\CategoryDto\CategoryListDto.cs" />
+    <Compile Include="Entities\Dtos\CategoryDto\CategoryUpdateDto.cs" />
+    <Compile Include="Entities\Dtos\ContactDto\ContactAddDto.cs" />
+    <Compile Include="Entities\Dtos\ContactDto\ContactGetDto.cs" />
+    <Compile Include="Entities\Dtos\ContactDto\ContactListDto.cs" />
+    <Compile Include="Entities\Dtos\FavoriteBookDto\FavoriteBookAddDto.cs" />
+    <Compile Include="Entities\Dtos\FavoriteBookDto\FavoriteBookListDto.cs" />
+    <Compile Include="Entities\Dtos\FavoriteBookDto\FavoriteBookGetDto.cs" />
+    <Compile Include="Entities\Dtos\ImageDto\ImageDeletedDto.cs" />
+    <Compile Include="Entities\Dtos\ImageDto\ImageUploadedDto.cs" />
+    <Compile Include="Entities\Dtos\PublisherDto\PublisherAddDto.cs" />
+    <Compile Include="Entities\Dtos\PublisherDto\PublisherGetDto.cs" />
+    <Compile Include="Entities\Dtos\PublisherDto\PublisherListDto.cs" />
+    <Compile Include="Entities\Dtos\PublisherDto\PublisherUpdateDto.cs" />
+    <Compile Include="Entities\Dtos\UserBookDto\UserBookUpdateDto.cs" />
+    <Compile Include="Entities\Dtos\UserBookDto\UserBookAddDto.cs" />
+    <Compile Include="Entities\Dtos\UserBookDto\UserBookGetDto.cs" />
+    <Compile Include="Entities\Dtos\UserBookDto\UserBookListDto.cs" />
+    <Compile Include="Entities\Dtos\UserDto\UserAddDto.cs" />
+    <Compile Include="Entities\Dtos\UserDto\UserGetDto.cs" />
+    <Compile Include="Entities\Dtos\UserDto\UserListDto.cs" />
+    <Compile Include="Entities\Dtos\UserDto\UserUpdateDto.cs" />
+    <Compile Include="Entities\Dtos\WriterDto\WriterAddDto.cs" />
+    <Compile Include="Entities\Dtos\WriterDto\WriterGetDto.cs" />
+    <Compile Include="Entities\Dtos\WriterDto\WriterListDto.cs" />
+    <Compile Include="Entities\Dtos\WriterDto\WriterUpdateDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Library.Core\Library.Core.csproj">
+      <Project>{0117052D-CC0E-469D-B0B6-DAC9301C6DB3}</Project>
+      <Name>Library.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
